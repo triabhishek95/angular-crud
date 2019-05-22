@@ -1,0 +1,47 @@
+<div class="row">
+	<div class="col-md-4 container">
+		<form class="form-horizoontal" (ngSubmit)="addRecord()" >
+			<div class="form-group row">
+				<label class="col-sm-4 control-label">Employee Name</label>
+				<div class="col-sm-8">
+					<input type="text" name="employee_name" class="form-control" [(ngModel)]="record.name">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-sm-4 control-label">Employee Age</label>
+				<div class="col-sm-8">
+					<input type="text" name="employee_age" class="form-control" [(ngModel)]="record.age">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-sm-4 control-label">Employee Salary</label>
+				<div class="col-sm-8">
+					<input type="text" name="employee_salary" class="form-control" [(ngModel)]="record.salary">
+				</div>
+			</div>
+			<div class="form-group row">
+				<button class="btn btn-primary text-white right">{{btntitle}}</button>
+			</div>
+		</form>
+	</div>	
+	<div class="col-md-7">
+		<table  border="1">
+			<tr>
+				<td>Id</td>
+				<td>Employee Name</td>
+				<td>Employee Age</td>
+				<td>Employee Salary</td>
+				<td>Edit</td>
+				<td>Delete</td>
+			</tr>
+			<tr *ngFor="let obj of data">
+				<td>{{obj.id}}</td>
+				<td>{{obj.employee_name}}</td>
+				<td>{{obj.employee_age}}</td>
+				<td>{{obj.employee_salary}}</td>
+				<td><a (click)="updateRecord(obj)" class="btn btn-primary text-white">Edit</a></td>
+				<td><a (click)="deleteRecord(obj.id)" class="btn btn-danger text-white">Delete</a></td>
+			</tr>
+		</table>
+	</div>
+</div>
