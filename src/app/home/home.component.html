@@ -1,47 +1,56 @@
-<div class="row">
-	<div class="col-md-4 container">
-		<form class="form-horizoontal" (ngSubmit)="addRecord()" >
-			<div class="form-group row">
-				<label class="col-sm-4 control-label">Employee Name</label>
-				<div class="col-sm-8">
-					<input type="text" name="employee_name" class="form-control" [(ngModel)]="record.name">
+<div class="container">
+	<div class="row">
+		<div class="col-md-5">
+			<div class="card">
+				<div class="card-header">
+					<h5> Employee Form</h5>
+				</div>
+				<div class="card-body">
+					<form class="form-horizoontal" (ngSubmit)="addRecord()" >
+						<div class="form-group row">
+							<label class="col-sm-5 control-label">Employee Name</label>
+							<div class="col-sm-7">
+								<input type="text" name="employee_name" class="form-control" [(ngModel)]="record.name">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-5 control-label">Employee Age</label>
+							<div class="col-sm-7">
+								<input type="text" name="employee_age" class="form-control" [(ngModel)]="record.age">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-5 control-label">Employee Salary</label>
+							<div class="col-sm-7">
+								<input type="text" name="employee_salary" class="form-control" [(ngModel)]="record.salary">
+							</div>
+						</div>
+						<div class="form-group">
+							<button class="btn mr-1 float-right btn-primary text-white">{{btntitle}}</button>
+						</div>
+					</form>
 				</div>
 			</div>
-			<div class="form-group row">
-				<label class="col-sm-4 control-label">Employee Age</label>
-				<div class="col-sm-8">
-					<input type="text" name="employee_age" class="form-control" [(ngModel)]="record.age">
-				</div>
-			</div>
-			<div class="form-group row">
-				<label class="col-sm-4 control-label">Employee Salary</label>
-				<div class="col-sm-8">
-					<input type="text" name="employee_salary" class="form-control" [(ngModel)]="record.salary">
-				</div>
-			</div>
-			<div class="form-group row">
-				<button class="btn btn-primary text-white right">{{btntitle}}</button>
-			</div>
-		</form>
-	</div>	
-	<div class="col-md-7">
-		<table  border="1">
-			<tr>
-				<td>Id</td>
-				<td>Employee Name</td>
-				<td>Employee Age</td>
-				<td>Employee Salary</td>
-				<td>Edit</td>
-				<td>Delete</td>
-			</tr>
-			<tr *ngFor="let obj of data">
-				<td>{{obj.id}}</td>
-				<td>{{obj.employee_name}}</td>
-				<td>{{obj.employee_age}}</td>
-				<td>{{obj.employee_salary}}</td>
-				<td><a (click)="updateRecord(obj)" class="btn btn-primary text-white">Edit</a></td>
-				<td><a (click)="deleteRecord(obj.id)" class="btn btn-danger text-white">Delete</a></td>
-			</tr>
-		</table>
+		</div>	
+		<div class="col-md-7">
+			<table  border="1">
+				<tr>
+					<td class="text-primary text-center">Id</td>
+					<td class="text-primary text-center">Employee Name</td>
+					<td class="text-primary text-center">Employee Age</td>
+					<td class="text-primary text-center">Employee Salary</td>
+					<td class="text-primary text-center">Edit</td>
+					<td class="text-primary text-center">Delete</td>
+				</tr>
+				<tr *ngFor="let obj of data">
+					<td class="text-center">{{obj.id}}</td>
+					<td class="text-center">{{obj.employee_name}}</td>
+					<td class="text-center">{{obj.employee_age}}</td>
+					<td class="text-center">{{obj.employee_salary}}</td>
+					<td class="text-center"><a (click)="updateRecord(obj)" class="btn btn-primary text-white">Edit</a></td>
+					<td class="text-center"><a (click)="deleteRecord(obj.id)" class="btn btn-danger text-white">Delete</a></td>
+				</tr>
+			</table>
+		</div>
 	</div>
 </div>

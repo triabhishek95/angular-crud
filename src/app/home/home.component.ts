@@ -53,6 +53,8 @@ export class HomeComponent implements OnInit {
 
   /*For updating the existing Records. */
   updateRecord(obj){
+	document.body.scrollTop = 0; /* For Safari */
+	document.documentElement.scrollTop = 0; /* For Chrome, Mozila & all other browsers */
   	this.btntitle="Update";
   	this.currentindex = obj.id;
   	this.record.id = obj.id;
